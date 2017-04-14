@@ -1,0 +1,13 @@
+##Overview
+This package implements the optimized method of LSH for a big memory machines.
+
+To achieve this latency and speed-up we employed a number of
+optimization techniques: (1) using Blaze [17], an open-source
+high-performance C++ based linear algebra library to speed up
+hash computations via matrix multiplications, (2) loop
+unrolling and vectorization to take advantage of CPU vector
+processing capabilities and (3) software prefetching to reduce
+cache misses
+
+##Reference
+"LSH Algorithm and Implementation", http://www.mit.edu/~andoni/LSH/

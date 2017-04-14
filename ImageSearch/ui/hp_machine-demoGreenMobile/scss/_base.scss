@@ -1,0 +1,252 @@
+/**
+ * Base Styles
+ */
+html{
+	font-family: "gotham-light";
+	font-size: 14px;
+}
+
+h1,h2,h3,h4,h5,h6,strong,b{
+	font-family: "gotham-book";
+	margin:0; padding:0;
+}
+
+::-webkit-input-placeholder {
+   color: #CCC;
+   font-family: "gotham-light";
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #CCC;  
+   font-family: "gotham-light";
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #CCC;  
+   font-family: "gotham-light";
+}
+
+:-ms-input-placeholder {  
+   color: #CCC;  
+   font-family: "gotham-light";
+}
+
+.site-wrapper{
+	div.logo{
+		display: inline-block;
+		margin: 0 0 0 0;
+		vertical-align: middle;
+		width: 352px;
+		height: 147px;
+		float: left;
+
+		a{
+			display: block;
+			width: 352px;
+			height: 147px;
+			background-image: url( ../img/hplogo_new_lg_1x.png );
+			background-repeat: no-repeat;
+			background-size: 352px 147px;
+		}
+	}
+
+	.gear {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 220px;
+		z-index: 10;
+
+		img {
+			@include prefix(animation, rotate 3s infinite linear);
+		}
+	}
+}
+
+#page-container{
+	padding:0px 0 80px 0;
+
+	.background-video{
+		position: fixed; z-index:-1;
+		top:50%; left:50%;
+	}
+
+	.page-header-container{
+		margin:0; padding:20px 20px 0 20px;
+
+		.page-header-content{
+			padding:0;
+
+			@include clearfix();
+
+			div.header-lockup{
+				h2{
+					line-height: 60px;
+				}
+			}
+		}
+	}
+
+	.page-content-sections{
+		@include clearfix();
+
+		margin:0 -4px 0 -4px;
+
+		.page-content-section{
+			width: 50%;
+			float: left;
+
+			.page-content-section-inner{
+				padding:4px;
+			}
+		}
+	}
+
+	.page-footer-container{
+		position:fixed;
+		bottom:0; right:0; z-index:1;
+		text-align: left;
+
+		.page-footer-content{
+			@include clearfix();
+
+			padding:14px 20px;
+
+			.page-navigation{
+				width: 100%;
+
+				ul{
+					text-align: right;
+
+					li{
+						a{
+							background-color: #CCC;
+							padding:10px 20px;
+							color: #fff;
+							font-size: 16px;
+							line-height: 18px;
+							font-family: 'gotham-book';
+						}
+
+						&.disabled{
+							a, a:hover{
+								background-color: #7ca09a;
+								opacity: .4;
+								cursor: default;
+							}
+						}
+
+						.btn-green {
+							background-color: $btn-green;
+
+							&:hover {
+								background-color: #7ca09a;
+							}
+						}
+
+						.btn-black {
+							background-color: #000000;
+							&:hover{
+								background-color: #444;								
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#register-container {
+	background-color:$navigation-grey;
+	width:100%;
+	display: inline-block;
+	float: left;
+	bottom:0;
+	position: fixed;
+	z-index:0;
+
+	.register-container-inner{
+		padding:14px 10px 14px 14px;
+	}
+
+	span {
+		margin-right: 8px;
+	}
+
+	form{
+		display: inline-block;
+	}
+
+	&.success{
+		form{
+			visibility: hidden;
+		}
+	}
+
+	input[type='submit'] {
+		border: none;
+		border-radius: 0;
+		line-height: 18px;
+		color: #fff;
+		padding: 10px 20px;
+		background-color: $btn-green;
+		outline: none;
+		text-transform: none;
+		font-family: 'gotham-book';
+		font-size: 16px;
+
+		&:hover{
+			background-color: #7ca09a;								
+		}
+	}
+
+	&.sending{
+		input[type='submit']{
+			visibility: hidden;
+		}
+	}
+
+	input[type='text'] {
+		font-size:20px;
+		padding: 10px 20px 9px 20px;
+		font-family:"gotham-light";
+		background-color: #fff;
+		line-height: 18px;
+		border-radius: 0;
+		border: none;
+		color: $dark-grey;
+		font-size: 16px;
+		text-transform: none;
+		width: 350px;
+		text-align: left;
+
+		&.error{
+			outline:1px solid #ff0000;
+		}
+	}
+
+	::-webkit-input-placeholder {
+	   color: #767676;
+	   font-size: 16px;
+	   text-transform: none;
+	}
+
+	:-moz-placeholder { /* Firefox 18- */
+	   color: #767676; 
+	   font-size: 16px; 
+	   text-transform: none;
+	}
+
+	::-moz-placeholder {  /* Firefox 19+ */
+	   color: #767676;
+	   font-size: 16px;  
+	   text-transform: none;
+	}
+
+	:-ms-input-placeholder {  
+	   color: #767676; 
+	   font-size: 16px; 
+	   text-transform: none;
+	}
+}

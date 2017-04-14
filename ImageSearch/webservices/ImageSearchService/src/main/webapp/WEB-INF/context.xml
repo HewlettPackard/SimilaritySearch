@@ -1,0 +1,62 @@
+<!--
+/* Similarity Search
+“© Copyright 2017  Hewlett Packard Enterprise Development LP
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF
+USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.”
+*/
+-->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.2.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
+
+	<!-- SearchConfiguration bean -->
+	<bean id="SearchConfiguration" class="com.hp.hpl.init.SearchConfiguration" init-method="readConfigurationFile"/>
+	
+	
+	<!--
+	Setup Spring MVC annotation scanning capability which allows to make use of annotations 
+	like @Controller, @RequestMapping etc.
+	-->
+	<context:component-scan base-package="com.hp.hpl.controller" />
+
+	<!-- 
+	Registers the DefaultAnnotationHandlerMapping and AnnotationMethodHandlerAdapter beans 
+	that are required for Spring MVC to dispatch requests to @Controllers.
+	By default, support for reading and writing JSON, if Jackson is present on the classpath, among others (see Spring docs).
+	-->
+	 <mvc:annotation-driven />
+	
+	<!-- File upload -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    	<property name="maxUploadSize" value="50000000"/>
+	</bean>
+	
+	<!-- Sets webservice timeouts -->
+	<bean id="messageSender" class="org.springframework.ws.transport.http.HttpComponentsMessageSender">
+	    <!-- connectionTimeout: Sets the timeout until the connection is established. -->
+	    <property name="connectionTimeout" value="10000"/>
+	    <!-- readTimeout: Sets the socket timeout for the underlying HttpClient. This is the time required for the service to reply. -->
+	    <property name="readTimeout" value="600000"/>
+	</bean>
+	
+	
+ 
+</beans>

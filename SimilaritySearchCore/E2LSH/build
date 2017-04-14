@@ -1,0 +1,2 @@
+/opt/gcc/bin/g++ -c -w -std=c++11 -O3 -DREAL_FLOAT sources/*.cpp -fPIC
+/opt/gcc/bin/g++ -shared -Wl,-soname,libLSH.so -o libLSH.so -O3 -DREAL_FLOAT *.o

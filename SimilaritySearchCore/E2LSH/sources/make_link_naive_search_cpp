@@ -1,0 +1,4 @@
+# make and link NaiveSearch.cpp using icc
+
+/opt/intel/bin/icc -std=c++11 -w -fPIC -DREAL_FLOAT -O3 -vec-report=6 -I/usr/local/include -c  NaiveSearch.cpp
+/opt/intel/bin/icc -fPIC -shared -Wl,-soname,libLSH.so -ltcmalloc -lrt -o libLSH.so BucketHashing.o Geometry.o GlobalVars.o QueryHashFunctions.o HashIndex.o IndexBuilder.o IndexSearch.o NaiveSearch.o LocalitySensitiveHashing.o LSHHashFunction.o LSHManager.o MergeResult.o NearNeighbors.o Random.o SearchCoordinator.o SearchCoordinatorTracker.o SearchResult.o SelfTuning.o TimeSeriesBuilder.o TimeSeries.o Util.o LSHtest.o -lm -L/home/kimmij/blaze-2.1/lib -lblaze

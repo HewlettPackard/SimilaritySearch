@@ -1,0 +1,43 @@
+/* ============================
+    CFM Navigation Styles
+===============================*/
+
+.cfm-navigation
+{
+	display:block;
+	vertical-align:middle;
+
+	@media(min-width:$tablet-small){ display:inline-block; }
+
+	ul{
+		display: inline-block;
+		list-style: none;
+		padding:0; margin:0;
+
+		@include clearfix();
+
+		li{
+			display: inline-block;
+			margin:0 0 0 10px;
+
+			&:first-child{
+				margin:0;
+			}
+
+			a{
+				display: inline-block;
+				line-height: 20px;
+				text-decoration: none;
+				color: #666;
+				padding:3px 0 1px 0;
+				outline:none !important;
+			}
+
+			&:hover, &.active{
+				a{
+					color:#AAA;
+				}
+			}
+		}
+	}
+}

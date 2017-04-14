@@ -1,0 +1,102 @@
+/* ============================
+    CFM Project Gallery Styles
+===============================*/
+
+div.cfm-project-gallery{
+	padding:0 0 0 0;
+	margin:0 0 0 0;
+	position: relative;
+
+	ul{
+ 		list-style: none;
+ 		padding:0; margin:-5px;
+ 		
+ 		@include clearfix();
+
+ 		li{
+ 			float:left;
+ 			width:50%;
+ 			display: none;
+
+ 			&.visible{
+ 				display: block;
+ 			}
+
+ 			div.project-inner{
+ 				padding:5px;
+ 				margin:0px;
+
+ 				@include prefix(transition, opacity 1s);
+
+	 			a{
+	 				display: block;
+	 				cursor: pointer;
+	 				background-size:cover;
+	 				background-position: center center;
+	 				padding-bottom:100%;
+	 				position: relative;
+	 				height:0;
+
+	 				@include prefix(transition, opacity 1s);
+
+	 				&:link,&:visited{
+	 					color: #999;
+	 					text-decoration: none;
+	 				}
+
+	 				div.project-label{
+	 					position: absolute;
+	 					height: 100%; width: 100%;
+	 					text-align: center;
+
+	 					&:before{
+						 	content: "";
+						 	display: inline-block;
+						 	height: 100%;
+						 	vertical-align: middle;
+						 	margin: 0 -.2em 0 0;
+	 					}
+
+	 					div.project-label-inner{
+	 						border-radius: 4px;
+	 						background-color:#FFF;
+	 						padding:20px;
+		 					display: inline-block;
+						  	vertical-align: middle;
+		 				}
+	 				}
+
+	 				&:hover{
+	 					outline:5px solid $navigation-grey;
+	 				}
+	 			}
+ 			}
+
+ 			&.selected{
+ 				div.project-inner{
+ 					a{
+						outline:5px solid $brand-green;
+					}
+				}
+			}
+ 		}
+ 	}
+
+ 	.button {
+ 		color: #fff;
+ 		background-color: $black;
+ 		padding: 15px 25px;
+ 		text-decoration: none;
+ 		display: inline-block;
+ 		margin: auto;
+ 		text-align: center;
+ 		cursor: pointer;
+ 		margin-top: 14px;
+ 		font-size: 16px;
+		font-family: 'gotham-book';
+ 	}
+
+ 	.button:hover {
+ 		background-color: #444;
+ 	}
+ }

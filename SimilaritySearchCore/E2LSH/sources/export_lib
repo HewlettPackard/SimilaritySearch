@@ -1,0 +1,3 @@
+# export libraries for using icc
+
+export LD_LIBRARY_PATH=/usr/local/lib:/opt/gcc/lib64:/home/kimmij/lapack-3.5.0:/home/kimmij/blaze-2.1/lib:/opt/intel/composer_xe_2013_sp1.3.174/mkl/lib/intel64:/opt/intel/lib/intel64/:.

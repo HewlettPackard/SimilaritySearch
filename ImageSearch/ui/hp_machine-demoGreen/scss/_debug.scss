@@ -1,0 +1,37 @@
+/**
+ * Debugger styles
+ */
+
+ body.debug{
+    &:after,&.mobile:before{
+        display: block;
+        position: fixed;
+        font-size: 12px;
+        line-height: 12px;
+        background:#EEE;
+        border-radius: 4px;
+        padding:6px 10px 4px 10px;
+        opacity: .5;
+    }
+    &:after{
+        bottom:2px; right: 2px;
+        content:"Mobile";
+        @media(min-width:480px){ content:"Tablet Small" }
+        @media(min-width:760px){ content:"Tablet Large" }
+        @media(min-width:1200px){ content:"Desktop" }
+        @media(min-width:1600px){ content:"Desktop Large" }
+    }
+    &.mobile:before{
+        bottom:2px; left: 2px;
+        content:"Mobile";
+    }
+    &.mobile.iphone:before{
+        content:"iPhone";
+    }
+    &.mobile.ipad:before{
+        content:"iPad";
+    }
+    &.mobile.android:before{
+        content:"Android";
+    }
+}
