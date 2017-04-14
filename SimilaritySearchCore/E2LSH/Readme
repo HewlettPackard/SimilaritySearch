@@ -1,4 +1,4 @@
-##Overview
+## Overview
 This package implements the optimized method of LSH for a big memory machines.
 
 To achieve this latency and speed-up we employed a number of
@@ -7,7 +7,20 @@ high-performance C++ based linear algebra library to speed up
 hash computations via matrix multiplications, (2) loop
 unrolling and vectorization to take advantage of CPU vector
 processing capabilities and (3) software prefetching to reduce
-cache misses
+cache misses.
 
-##Reference
+## About LSH
+Locality Sensitive Hashing is a technique developed to perform
+fast search on high-dimensional data. It solves a slightly
+different problem. For a given query, it returns each point in S
+that is within a specific distance R of the query with high
+probability. Further, it ensures that points that are much further
+than distance R from the query are very unlikely to be returned.
+To accomplish this, the points in S are organized in an index
+consisting of hash tables where points that are close to each
+other are more likely to get mapped in the same bucket. LSH
+was proposed and derived first in [3] for hamming distance. It
+was extended to Euclidean distance in [1]. 
+
+## Reference
 "LSH Algorithm and Implementation", http://www.mit.edu/~andoni/LSH/
