@@ -14,8 +14,6 @@ Krishna Viswanathan, Jun Li, Mijung Kim, Tere Gonzalez, Janneth Rivera
 ## Acknowledgements
 Thanks to Richard Lewington and Romina Valera for her participation on the website design. Thanks to Ram Swaminathan, Sharad Singhal and April Mitchell for their management support.
 
-## How To
-
 ## Reference
 -"A Memory-Driven Computing Approach to High-Dimensional Similarity Search", HPE Technical Report, 2015 https://www.labs.hpe.com/publications/HPE-2016-45
 
@@ -23,7 +21,7 @@ Thanks to Richard Lewington and Romina Valera for her participation on the websi
 - Similarity Search Demo https://www.similaritysearch.labs.hpe.com/
 - [Video](demo/demo.mp4)
 ## More Info
-- [System Design] (SimilaritySearchCore/README.md)
+- [System Design](SimilaritySearchCore/README.md)
 	
 
 ## License
