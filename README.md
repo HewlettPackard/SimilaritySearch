@@ -21,7 +21,7 @@ Thanks to Richard Lewington and Romina Valera for her participation on the websi
 
 ## Live Demo
 - Similarity Search Demo https://www.similaritysearch.labs.hpe.com/
-- Video ![demo](demo/video.mp4)
+- Video ![demo](demo/demo.mp4)
 ## More Info
 - System Design  ![desing](SimilaritySearchCore/README.md)
 	
