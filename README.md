@@ -12,7 +12,7 @@ We build a similarity search index based on LSH hash functions which probabilist
 Krishna Viswanathan, Jun Li, Mijung Kim, Tere Gonzalez, Janneth Rivera
 
 ## Acknowledgements
-Thanks to Richard Lewington and Romina Valera for her participation on the website design. Thanks to Ram Swaminathan, Sharad Singhal and April Mitchell for their management support.
+Thanks to Richard Lewington and Romina Valera for their participation on the website design. Thanks to Ram Swaminathan, Sharad Singhal and April Mitchell for their management support.
 
 ## Reference
 -"A Memory-Driven Computing Approach to High-Dimensional Similarity Search", HPE Technical Report, 2015 https://www.labs.hpe.com/publications/HPE-2016-45
