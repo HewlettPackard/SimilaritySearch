@@ -5,11 +5,10 @@ To perform this search, each image is represented by several hundred to thousand
 
 ## System Design
 
-Image Search App is designed as 3 layers.  The UI layer enables the user to select an image file and search its similar images. The user can visualize the image results sent by Search service loading the images from our internal repository which contains all the possible images available to look for
-![arch](docs/ImageAppArchitecture.jpg "Image App architecture" width="200")
-The search service calls the operator program which executes the search algorithm. The web service interacts with the operator to retrieve the results to the UI. The operator implements several mechanisms to execute the search operations on The Machine.
-The operator code is highly optimized running directly in distributed or shared memory environment.
-![arch](docs/SystemDeployment.jpg.jpg "System architecture")
+Image Search App is designed as 3 layers.  The UI layer enables the user to select an image file and search its similar images. The user can visualize the image results sent by Search service loading the images from our internal repository which contains all the possible images available to look for. The search service calls the operator program which executes the search algorithm. The web service interacts with the operator to retrieve the results to the UI. The operator implements several mechanisms to execute the search operations on The Machine. The operator code is highly optimized running directly in distributed or shared memory environment.
+
+![arch](docs/ImageAppArchitecture.jpg "Image App architecture")
+
 
 ## WebServices
 The image search service offers a library of web services exposed on 2 main components:  
